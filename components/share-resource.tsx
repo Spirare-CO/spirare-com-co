@@ -32,11 +32,7 @@ export function ShareResource({ title, slug }: { title: string; slug: string }) 
         >
           Compartir este video
         </a>
-      ) : (
-        <p className="max-w-sm text-sm text-ink/70">
-          Compartir por WhatsApp se activa cuando el número institucional esté configurado. Puedes copiar el enlace.
-        </p>
-      )}
+      ) : null}
       <button type="button" onClick={copy} className="inline-flex min-h-12 items-center border border-ink px-5 text-sm font-semibold">
         {copied ? "Enlace copiado" : "Copiar enlace"}
       </button>

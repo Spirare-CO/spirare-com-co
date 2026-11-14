@@ -66,11 +66,6 @@ export default async function ContactoPage({
               <div className="bg-white p-5 text-sm leading-relaxed">
                 <p className="kicker text-electric">Mensaje preparado</p>
                 <p className="mt-3">{intents[active]}</p>
-                {!site.whatsappE164 ? (
-                  <p className="mt-3 text-ink/70">
-                    El número de WhatsApp todavía no está en la configuración. Cuando se agregue NEXT_PUBLIC_WHATSAPP_E164, este botón abrirá el chat con el texto de arriba.
-                  </p>
-                ) : null}
               </div>
             ) : null}
             {facts.length > 0 ? (

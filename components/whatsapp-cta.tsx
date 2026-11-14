@@ -43,9 +43,6 @@ export function WhatsAppCTA({
       onClick={() => track(event, eventParams)}
     >
       {children}
-      {!external && variant !== "quiet" ? (
-        <span className="sr-only"> El número de WhatsApp aún no está configurado. Irás a contacto.</span>
-      ) : null}
     </a>
   );
 }

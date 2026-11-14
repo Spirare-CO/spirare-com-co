@@ -52,8 +52,7 @@ export default function HomePage() {
               event="recorrido_pacientes"
               className="group bg-abyss px-4 py-4 transition hover:bg-deep md:px-6 md:py-8"
             >
-              <span className="kicker text-cyan">Recorrido 01</span>
-              <span className="display mt-2 block text-[1.7rem] leading-none md:text-5xl">Soy paciente</span>
+              <span className="display block text-[1.7rem] leading-none md:text-5xl">Soy paciente</span>
               <span className="mt-2 block max-w-sm text-sm text-white/75">Consultas, pruebas y cuidado respiratorio.</span>
               <span className="mt-4 inline-block text-sm text-cyan group-hover:translate-x-1 md:mt-6">Entrar al cuidado →</span>
             </TrackedLink>
@@ -62,8 +61,7 @@ export default function HomePage() {
               event="recorrido_instituciones"
               className="group bg-electric px-4 py-4 transition hover:bg-bright md:px-6 md:py-8"
             >
-              <span className="kicker text-white/80">Recorrido 02</span>
-              <span className="display mt-2 block text-[1.7rem] leading-none md:text-5xl">Soy institución o empresa</span>
+              <span className="display block text-[1.7rem] leading-none md:text-5xl">Soy institución o empresa</span>
               <span className="mt-2 block max-w-sm text-sm text-white/90">Asesoría especializada y tecnología respiratoria.</span>
               <span className="mt-4 inline-block text-sm group-hover:translate-x-1 md:mt-6">Ver soluciones →</span>
             </TrackedLink>
