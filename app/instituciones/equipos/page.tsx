@@ -3,11 +3,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { WhatsAppCTA } from "@/components/whatsapp-cta";
 import { equipmentCategories, productsByCategory } from "@/lib/equipment";
+import { meta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Equipos respiratorios",
-  description: "Catálogo de equipos de espirometría, medición de FeNO y nebulizadores de SPIRARE.",
-};
+export const metadata: Metadata = meta(
+  "/instituciones/equipos",
+  "Equipos respiratorios",
+  "Catálogo de equipos de espirometría, medición de FeNO y nebulizadores de SPIRARE.",
+);
 
 export default function EquiposPage() {
   return (

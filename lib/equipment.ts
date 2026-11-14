@@ -34,7 +34,7 @@ export const equipmentCategories: EquipmentCategory[] = [
       "La marca, el software y los sensores se detallan cuando haya un modelo confirmado.",
     ],
     quoteMessage:
-      "Hola, estoy interesado en recibir información y cotización de un equipo de espirometría de SPIRARE.",
+      "Hola, quisiera solicitar una cotización de equipos de espirometría de SPIRARE.",
   },
   {
     slug: "feno",

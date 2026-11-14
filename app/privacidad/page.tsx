@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { meta } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Tratamiento de datos personales",
-  description: "Borrador de la política de tratamiento de datos de SPIRARE, pendiente de revisión jurídica.",
-};
+export const metadata: Metadata = meta(
+  "/privacidad",
+  "Tratamiento de datos personales",
+  "Borrador de la política de tratamiento de datos de SPIRARE, pendiente de revisión jurídica.",
+);
 
 export default function PrivacidadPage() {
   return (

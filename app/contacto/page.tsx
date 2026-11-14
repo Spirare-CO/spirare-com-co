@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { WhatsAppCTA } from "@/components/whatsapp-cta";
 import { emergencyNotice, site } from "@/lib/site";
+import { meta } from "@/lib/seo";
 import { intents, type IntentId } from "@/lib/whatsapp";
 
-export const metadata: Metadata = {
-  title: "Contacto",
-  description: "Elige el motivo y abre WhatsApp con un mensaje preparado. SPIRARE no usa este canal para urgencias.",
-};
+export const metadata: Metadata = meta(
+  "/contacto",
+  "Contacto",
+  "Elige el motivo y abre WhatsApp con un mensaje preparado. SPIRARE no usa este canal para urgencias.",
+);
 
 const options: { title: string; copy: string; intent: IntentId }[] = [
   { title: "Quiero agendar una consulta", copy: "Medicina interna, neumología u orientación inicial.", intent: "cita" },

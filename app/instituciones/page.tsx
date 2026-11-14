@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { equipmentCategories } from "@/lib/equipment";
+import { meta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Instituciones y empresas",
-  description:
-    "Asesoría especializada y soluciones tecnológicas para instituciones y empresas del sector salud.",
-};
+export const metadata: Metadata = meta(
+  "/instituciones",
+  "Instituciones y empresas",
+  "Asesoría especializada y soluciones tecnológicas para instituciones y empresas del sector salud.",
+);
 
 export default function InstitucionesPage() {
   return (

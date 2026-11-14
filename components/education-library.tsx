@@ -48,7 +48,7 @@ export function EducationLibrary() {
             type="search"
           />
         </label>
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrar por categoría">
+        <div className="flex max-w-full gap-2 overflow-x-auto pb-1" role="group" aria-label="Filtrar por categoría">
           <FilterChip active={category === "todas"} onClick={() => setCategory("todas")}>
             Todas
           </FilterChip>
@@ -117,7 +117,7 @@ function FilterChip({
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`min-h-10 px-3 text-left text-xs ${active ? "bg-ink text-white" : "bg-ice text-ink hover:bg-cyan/40"}`}
+      className={`min-h-11 shrink-0 px-3 text-left text-xs ${active ? "bg-ink text-white" : "bg-ice text-ink hover:bg-cyan/40"}`}
     >
       {children}
     </button>

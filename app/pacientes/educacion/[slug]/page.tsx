@@ -3,7 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ShareResource } from "@/components/share-resource";
+import { YoutubeEmbed } from "@/components/youtube-embed";
 import { categoryById, getPublishedResource, publishedResources } from "@/lib/education";
+import { meta } from "@/lib/seo";
 
 type Params = { slug: string };
 
@@ -15,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params;
   const resource = getPublishedResource(slug);
   if (!resource) return { title: "Recurso educativo" };
-  return { title: resource.title, description: resource.description };
+  return meta(`/pacientes/educacion/${resource.slug}`, resource.title, resource.description);
 }
 
 function youtubeId(url: string) {
@@ -55,13 +57,7 @@ export default async function ResourcePage({ params }: { params: Promise<Params>
       <article className="mx-auto max-w-[1000px] px-4 py-10 md:px-8">
         <div className="aspect-video bg-ink">
           {video ? (
-            <iframe
-              className="h-full w-full"
-              src={`https://www.youtube-nocookie.com/embed/${video}`}
-              title={resource.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+            <YoutubeEmbed id={video} title={resource.title} />
           ) : (
             <a href={resource.videoUrl} className="flex h-full items-center justify-center text-cyan" rel="noopener noreferrer">
               Abrir video
