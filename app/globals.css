@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-sora);
+  --color-ink: #07122e;
+  --color-abyss: #08122f;
+  --color-deep: #101d67;
+  --color-electric: #1476d4;
+  --color-bright: #2399f3;
+  --color-cyan: #7bdefa;
+  --color-ice: #e3f6ff;
+  --color-mist: #f4fafd;
+  --color-paper: #f7fbfd;
+  --color-line: rgba(8, 18, 47, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-manrope), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #7bdefa;
+  color: #07122e;
+}
+
+:focus-visible {
+  outline: 2px solid #2399f3;
+  outline-offset: 3px;
+}
+
+.display {
+  font-family: var(--font-sora), sans-serif;
+  letter-spacing: -0.045em;
+}
+
+.kicker {
+  font-family: var(--font-sora), sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.breath {
+  transform-origin: 50% 55%;
+  animation: breath 8.5s ease-in-out infinite;
+}
+
+.drift {
+  animation: drift 14s ease-in-out infinite;
+}
+
+@keyframes breath {
+  0%,
+  100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.018) translateY(4px);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-12px, 10px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .breath,
+  .drift {
+    animation: none;
+  }
+}
+
+.bronchi-field {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240' fill='none'><path d='M120 20 C120 70 120 80 90 110 C60 140 40 150 30 200' stroke='%237BDEFA' stroke-opacity='0.45' stroke-width='1.2'/><path d='M120 20 C120 70 120 80 150 110 C180 140 200 150 214 198' stroke='%232399F3' stroke-opacity='0.35' stroke-width='1.2'/><path d='M90 110 C70 130 55 128 40 150' stroke='%237BDEFA' stroke-opacity='0.3' stroke-width='0.8'/><path d='M150 110 C176 128 188 132 206 154' stroke='%237BDEFA' stroke-opacity='0.3' stroke-width='0.8'/></svg>");
+  background-size: 280px 280px;
+}
+
+.rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(123, 222, 250, 0.8), transparent);
+}
