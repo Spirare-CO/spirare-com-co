@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { WhatsAppCTA } from "@/components/whatsapp-cta";
 import { getCategory, getProduct, products, quoteMessageForProduct } from "@/lib/equipment";
+import { meta } from "@/lib/seo";
 
 type Params = { slug: string };
 
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params;
   const product = getProduct(slug);
   if (!product) return { title: "Equipo" };
-  return { title: product.name, description: product.description };
+  return meta(`/instituciones/equipos/${product.slug}`, product.name, product.description);
 }
 
 export default async function ProductPage({ params }: { params: Promise<Params> }) {

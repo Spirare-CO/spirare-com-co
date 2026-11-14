@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { WhatsAppCTA } from "@/components/whatsapp-cta";
+import { meta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Asesoría en contratación de servicios respiratorios",
-  description:
-    "Asesoría para organizaciones de salud sobre modelos de contratación en la atención de enfermedades respiratorias.",
-};
+export const metadata: Metadata = meta(
+  "/instituciones/asesoria",
+  "Asesoría en contratación de servicios respiratorios",
+  "Asesoría para organizaciones de salud sobre modelos de contratación en la atención de enfermedades respiratorias.",
+);
 
 const audiences = ["IPS", "EPS", "Clínicas", "Hospitales", "Aseguradoras y otras organizaciones de atención respiratoria"];
 

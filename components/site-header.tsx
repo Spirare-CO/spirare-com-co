@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BronchialMark } from "@/components/lung";
 import { WhatsAppCTA } from "@/components/whatsapp-cta";
 
@@ -19,6 +19,8 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const menuButton = useRef<HTMLButtonElement>(null);
+  const mobileNav = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -33,8 +35,21 @@ export function SiteHeader() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    if (!open) return;
+    const nav = mobileNav.current;
+    const previous = document.activeElement as HTMLElement | null;
+    nav?.querySelector<HTMLElement>("a")?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButton.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+      previous?.focus();
     };
   }, [open]);
 
@@ -76,29 +91,30 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="hidden lg:block">
-          <WhatsAppCTA intent="cita" event="agendar_cita" className="min-h-10">
-            Agendar cita
+        <div className="ml-auto flex items-center gap-2">
+          <WhatsAppCTA intent="cita" event="agendar_cita" className="min-h-11 px-3 lg:min-h-10 lg:px-5">
+            <span className="lg:hidden">Cita</span>
+            <span className="hidden lg:inline">Agendar cita</span>
           </WhatsAppCTA>
+          <button
+            ref={menuButton}
+            type="button"
+            className="inline-flex h-11 w-11 items-center justify-center border border-white/30 lg:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span className="sr-only">{open ? "Cerrar menú" : "Abrir menú"}</span>
+            <span className="flex w-5 flex-col gap-1.5" aria-hidden>
+              <span className={`h-px bg-white transition ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
+              <span className={`h-px bg-white transition ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
+            </span>
+          </button>
         </div>
-
-        <button
-          type="button"
-          className="inline-flex h-11 w-11 items-center justify-center border border-white/20 lg:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          onClick={() => setOpen((value) => !value)}
-        >
-          <span className="sr-only">{open ? "Cerrar menú" : "Abrir menú"}</span>
-          <span className="flex w-5 flex-col gap-1.5" aria-hidden>
-            <span className={`h-px bg-white transition ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
-            <span className={`h-px bg-white transition ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
-          </span>
-        </button>
       </div>
 
       {open ? (
-        <nav id="mobile-nav" className="max-h-[calc(100vh-4rem)] overflow-auto border-t border-white/10 px-4 py-6 lg:hidden" aria-label="Móvil">
+        <nav ref={mobileNav} id="mobile-nav" className="max-h-[calc(100svh-4rem)] overflow-auto border-t border-white/10 px-4 py-6 lg:hidden" aria-label="Móvil">
           <ul className="space-y-1">
             {links.map((link) => (
               <li key={link.href}>

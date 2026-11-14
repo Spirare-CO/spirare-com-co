@@ -17,10 +17,10 @@ export function SiteFooter() {
             <BronchialMark className="h-8 w-8 text-cyan" />
             <p className="display text-2xl">SPIRARE</p>
           </div>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
-            Ciencia, respiración, conocimiento y tecnología. {site.concept}.
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">
+            Ciencia, respiración y tecnología. {site.concept}.
           </p>
-          <p className="mt-6 max-w-md text-xs leading-relaxed text-white/55">{emergencyNotice}</p>
+          <p className="mt-6 max-w-md text-sm leading-relaxed text-white/75">{emergencyNotice}</p>
         </div>
         <div className="grid gap-8 sm:grid-cols-3 lg:col-span-7">
           <div>
@@ -61,7 +61,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-[1400px] flex-col gap-2 px-4 py-5 text-xs text-white/50 md:flex-row md:justify-between md:px-8">
+        <div className="mx-auto flex max-w-[1400px] flex-col gap-2 px-4 py-5 text-sm text-white/75 md:flex-row md:justify-between md:px-8">
           <p>© {new Date().getFullYear()} SPIRARE. Contenido clínico sujeto a revisión profesional.</p>
           <p>Los datos de sede, horarios y habilitación se publican cuando estén confirmados.</p>
         </div>

@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { WhatsAppCTA } from "@/components/whatsapp-cta";
+import { meta } from "@/lib/seo";
 import { services } from "@/lib/services";
 
-export const metadata: Metadata = {
-  title: "Atención para pacientes",
-  description:
-    "Consultas, pruebas respiratorias y orientación para acompañarte en el cuidado de tu salud en SPIRARE.",
-};
+export const metadata: Metadata = meta(
+  "/pacientes",
+  "Atención para pacientes",
+  "Consultas, pruebas respiratorias y orientación para acompañarte en el cuidado de tu salud en SPIRARE.",
+);
 
 export default function PacientesPage() {
   const groups = [

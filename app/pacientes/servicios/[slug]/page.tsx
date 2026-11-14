@@ -6,6 +6,7 @@ import { ViewBeacon } from "@/components/view-beacon";
 import { ReviewNote } from "@/components/review-note";
 import { WhatsAppCTA } from "@/components/whatsapp-cta";
 import { categoryById, resourcesInCategory } from "@/lib/education";
+import { meta } from "@/lib/seo";
 import { getService, services } from "@/lib/services";
 
 type Params = { slug: string };
@@ -18,11 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params;
   const service = getService(slug);
   if (!service) return {};
-  return {
-    title: service.name,
-    description: service.summary,
-    openGraph: { title: service.name, description: service.summary },
-  };
+  return meta(`/pacientes/servicios/${service.slug}`, service.name, service.summary);
 }
 
 export default async function ServicePage({ params }: { params: Promise<Params> }) {
@@ -55,8 +52,8 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
       </header>
 
       <article className="bg-paper">
-        <div className="mx-auto grid max-w-[1100px] gap-12 px-4 py-14 md:px-8 lg:grid-cols-[1fr_16rem]">
-          <div className="space-y-12">
+        <div className="mx-auto grid max-w-[1100px] gap-10 px-4 py-10 md:px-8 lg:grid-cols-[1fr_16rem] lg:py-14">
+          <div className="order-2 space-y-12 lg:order-1">
             <section>
               <h2 className="display text-3xl">Para qué sirve</h2>
               <p className="mt-4 text-base leading-relaxed text-ink/80">{service.purpose}</p>
@@ -88,7 +85,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
               <div className="mt-4 divide-y divide-ink/10">
                 {service.faqs.map((faq) => (
                   <details key={faq.question} className="group py-4">
-                    <summary className="cursor-pointer list-none pr-6 font-semibold marker:content-none">
+                    <summary className="cursor-pointer list-none pr-6 font-semibold marker:content-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bright">
                       {faq.question}
                     </summary>
                     <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink/75">{faq.answer}</p>
@@ -115,7 +112,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
               </p>
             )}
           </div>
-          <aside className="h-fit bg-white p-5 lg:sticky lg:top-24">
+          <aside className="order-1 h-fit bg-white p-5 lg:sticky lg:top-24 lg:order-2">
             <p className="kicker text-electric">Solicitar</p>
             <p className="mt-3 text-sm leading-relaxed">Escribe con un mensaje ya preparado para este servicio. No envíes datos clínicos sensibles.</p>
             <WhatsAppCTA intent={service.intent} event="whatsapp_servicio" eventParams={{ slug: service.slug }} className="mt-5 w-full">

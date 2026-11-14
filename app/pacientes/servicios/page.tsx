@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { meta } from "@/lib/seo";
 import { services } from "@/lib/services";
 
-export const metadata: Metadata = {
-  title: "Servicios para pacientes",
-  description:
-    "Consultas de medicina interna y neumología, espirometría, caminata de seis minutos, FeNO, terapia respiratoria, poligrafía domiciliaria y taller de CPAP.",
-};
+export const metadata: Metadata = meta(
+  "/pacientes/servicios",
+  "Servicios para pacientes",
+  "Consultas de medicina interna y neumología, espirometría, caminata de seis minutos, FeNO, terapia respiratoria, poligrafía domiciliaria y taller de CPAP.",
+);
 
 export default function ServiciosPage() {
   return (

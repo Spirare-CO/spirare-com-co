@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { EducationLibrary } from "@/components/education-library";
+import { meta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Educación respiratoria",
-  description:
-    "Biblioteca de SPIRARE para compartir con pacientes videos revisados sobre inhaladores, CPAP, dispositivos y pruebas respiratorias.",
-};
+export const metadata: Metadata = meta(
+  "/pacientes/educacion",
+  "Educación respiratoria",
+  "Biblioteca de SPIRARE para compartir con pacientes videos revisados sobre inhaladores, CPAP, dispositivos y pruebas respiratorias.",
+);
 
 export default function EducacionPage() {
   return (

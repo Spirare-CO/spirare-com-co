@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { meta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Nosotros",
-  description: "SPIRARE articula atención médica, educación del paciente y tecnología para la salud respiratoria.",
-};
+export const metadata: Metadata = meta(
+  "/nosotros",
+  "Nosotros",
+  "SPIRARE articula atención médica, educación del paciente y tecnología para la salud respiratoria.",
+);
 
 const pending = [
   "Historia de la organización",

@@ -4,7 +4,10 @@ import { TrackedLink } from "@/components/tracked-link";
 import { WhatsAppCTA } from "@/components/whatsapp-cta";
 import { educationCategories, publishedResources } from "@/lib/education";
 import { services } from "@/lib/services";
+import { meta } from "@/lib/seo";
 import { site } from "@/lib/site";
+
+export const metadata = meta("/", "SPIRARE — Respirar mejor empieza aquí", site.support, true);
 
 const patientHighlights = [
   ["01", "Consulta médica especializada", "Medicina interna y neumología."],
@@ -25,42 +28,44 @@ export default function HomePage() {
 
   return (
     <main>
-      <section className="relative min-h-[100svh] overflow-hidden bg-abyss text-white">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_42%,rgba(35,153,243,0.35),transparent_42%),radial-gradient(circle_at_20%_80%,rgba(16,29,103,0.9),transparent_40%)]" />
+      <section className="relative overflow-hidden bg-abyss text-white lg:min-h-[100svh]">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_40%,rgba(35,153,243,0.28),transparent_46%)]" />
         <Lung
           labelled
-          className="pointer-events-none absolute -right-[42%] top-[22%] w-[150%] opacity-35 sm:top-[16%] lg:-right-[4%] lg:top-[6%] lg:w-[54%] lg:opacity-100"
+          className="pointer-events-none absolute -right-[30%] bottom-[-8%] w-[88%] opacity-25 sm:w-[70%] lg:bottom-auto lg:-right-[2%] lg:top-[7%] lg:w-[52%] lg:opacity-100"
         />
-        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1400px] flex-col px-4 pb-6 pt-24 md:px-8 md:pt-32">
+        <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col px-4 pb-6 pt-24 md:px-8 lg:min-h-[100svh] lg:justify-between lg:pt-32">
+          <div className="max-w-xl lg:max-w-[34rem]">
           <p className="kicker text-cyan">SPIRARE · {site.concept}</p>
-          <h1 className="display mt-5 max-w-[11ch] text-[12.5vw] leading-[0.88] sm:text-6xl lg:max-w-[9.2ch] lg:text-[6.6rem]">
+          <h1 className="display mt-4 text-[2.35rem] leading-[0.9] min-[380px]:text-5xl sm:text-6xl lg:text-[6.4rem]">
             Respirar
             <br />
             mejor
             <br />
             <span className="text-cyan">empieza aquí.</span>
           </h1>
-          <p className="mt-8 max-w-md text-base leading-relaxed text-white/75 md:text-lg">{site.support}</p>
-          <div className="mt-auto grid gap-3 pt-16 md:grid-cols-2">
+          <p className="mt-5 max-w-md text-base leading-relaxed text-white/80">{site.support}</p>
+          </div>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:mt-10">
             <TrackedLink
               href="/pacientes"
               event="recorrido_pacientes"
-              className="group bg-abyss px-2 py-5 transition hover:bg-deep md:px-6 md:py-8"
+              className="group bg-abyss px-4 py-4 transition hover:bg-deep md:px-6 md:py-8"
             >
               <span className="kicker text-cyan">Recorrido 01</span>
-              <span className="display mt-3 block text-3xl md:text-5xl">Soy paciente</span>
-              <span className="mt-2 block max-w-sm text-sm text-white/70">Consultas, pruebas y cuidado respiratorio.</span>
-              <span className="mt-6 inline-block text-sm text-cyan group-hover:translate-x-1">Entrar al cuidado →</span>
+              <span className="display mt-2 block text-[1.7rem] leading-none md:text-5xl">Soy paciente</span>
+              <span className="mt-2 block max-w-sm text-sm text-white/75">Consultas, pruebas y cuidado respiratorio.</span>
+              <span className="mt-4 inline-block text-sm text-cyan group-hover:translate-x-1 md:mt-6">Entrar al cuidado →</span>
             </TrackedLink>
             <TrackedLink
               href="/instituciones"
               event="recorrido_instituciones"
-              className="group bg-electric/90 px-2 py-6 transition hover:bg-bright md:px-6 md:py-8"
+              className="group bg-electric px-4 py-4 transition hover:bg-bright md:px-6 md:py-8"
             >
               <span className="kicker text-white/80">Recorrido 02</span>
-              <span className="display mt-3 block text-3xl md:text-5xl">Soy institución o empresa</span>
-              <span className="mt-2 block max-w-sm text-sm text-white/85">Asesoría especializada y tecnología respiratoria.</span>
-              <span className="mt-6 inline-block text-sm group-hover:translate-x-1">Ver soluciones →</span>
+              <span className="display mt-2 block text-[1.7rem] leading-none md:text-5xl">Soy institución o empresa</span>
+              <span className="mt-2 block max-w-sm text-sm text-white/90">Asesoría especializada y tecnología respiratoria.</span>
+              <span className="mt-4 inline-block text-sm group-hover:translate-x-1 md:mt-6">Ver soluciones →</span>
             </TrackedLink>
           </div>
         </div>

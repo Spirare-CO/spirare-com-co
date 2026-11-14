@@ -59,7 +59,7 @@ export function Lung({ className = "", labelled = false }: LungProps) {
           strokeWidth="1.2"
         />
 
-        <g fill="none" strokeLinecap="round" filter="url(#softGlow)">
+        <g fill="none" strokeLinecap="round">
           <path d="M340 78 V188" stroke="#E8FBFF" strokeWidth="7" strokeOpacity="0.9" />
           <path d="M340 188 C340 230 300 250 250 286" stroke="#7BDEFA" strokeWidth="4.5" />
           <path d="M340 188 C340 230 392 248 444 286" stroke="#7BDEFA" strokeWidth="4.5" />

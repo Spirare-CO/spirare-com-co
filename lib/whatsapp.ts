@@ -4,7 +4,8 @@ export const intents = {
   cita: "Hola, quisiera recibir información para agendar una cita en SPIRARE.",
   "medicina-interna":
     "Hola, quisiera recibir información para agendar una consulta de medicina interna en SPIRARE.",
-  neumologia: "Hola, quisiera agendar una consulta de neumología en SPIRARE.",
+  neumologia:
+    "Hola, quisiera recibir información para agendar una consulta de neumología en SPIRARE.",
   espirometria:
     "Hola, quisiera solicitar información sobre la espirometría pre y post broncodilatador.",
   caminata:
