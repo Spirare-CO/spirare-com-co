@@ -15,9 +15,9 @@ type Props = {
 
 const variants: Record<NonNullable<Props["variant"]>, string> = {
   solid:
-    "inline-flex min-h-12 items-center justify-center bg-cyan px-5 text-sm font-semibold text-ink transition hover:bg-white",
+    "inline-flex min-h-12 items-center justify-center rounded-full bg-pulso px-5 text-sm font-semibold text-white transition hover:bg-pulso-120",
   line:
-    "inline-flex min-h-12 items-center justify-center border border-current px-5 text-sm font-semibold transition hover:bg-white/10",
+    "inline-flex min-h-12 items-center justify-center rounded-full border border-current px-5 text-sm font-semibold transition hover:bg-white/10",
   quiet: "inline-flex min-h-11 items-center gap-2 text-sm font-semibold underline-offset-4 hover:underline",
 };
 

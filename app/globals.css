@@ -1,18 +1,35 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-manrope);
-  --font-display: var(--font-sora);
-  --color-ink: #07122e;
-  --color-abyss: #08122f;
-  --color-deep: #101d67;
-  --color-electric: #1476d4;
-  --color-bright: #2399f3;
-  --color-cyan: #7bdefa;
-  --color-ice: #e3f6ff;
-  --color-mist: #f4fafd;
-  --color-paper: #f7fbfd;
-  --color-line: rgba(8, 18, 47, 0.12);
+  --font-sans: var(--font-roboto);
+  --font-display: var(--font-park);
+  --font-accent: var(--font-baskerville);
+
+  --color-marea: #00455a;
+  --color-marea-120: #003748;
+  --color-marea-140: #002836;
+  --color-blue: #6b98ad;
+  --color-blue-80: #7cadbd;
+  --color-blue-60: #9dc1ce;
+  --color-blue-40: #bdd6de;
+  --color-blue-20: #deeaef;
+  --color-bruma: #f9f8f6;
+  --color-arena: #d8d2c8;
+  --color-menta: #bfd8c2;
+  --color-pulso: #ff6d2d;
+  --color-pulso-120: #c95724;
+  --color-pulso-80: #ff8a57;
+
+  --color-ink: #00455a;
+  --color-abyss: #00455a;
+  --color-deep: #003748;
+  --color-electric: #6b98ad;
+  --color-bright: #7cadbd;
+  --color-cyan: #ff6d2d;
+  --color-ice: #deeaef;
+  --color-mist: #f9f8f6;
+  --color-paper: #f9f8f6;
+  --color-line: rgba(0, 69, 90, 0.12);
 }
 
 html {
@@ -27,28 +44,36 @@ html {
 }
 
 body {
-  background: var(--color-paper);
-  color: var(--color-ink);
-  font-family: var(--font-manrope), sans-serif;
+  background: var(--color-bruma);
+  color: var(--color-marea);
+  font-family: var(--font-roboto), sans-serif;
   text-rendering: optimizeLegibility;
   overflow-x: clip;
 }
 
 ::selection {
-  background: #7bdefa;
-  color: #07122e;
+  background: #ff6d2d;
+  color: #ffffff;
 }
 
 :focus-visible {
-  outline: 2px solid #2399f3;
+  outline: 2px solid #ff6d2d;
   outline-offset: 3px;
 }
 
 .display {
-  font-family: var(--font-sora), sans-serif;
-  letter-spacing: -0.045em;
+  font-family: var(--font-park), sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.03em;
   text-wrap: balance;
   overflow-wrap: break-word;
+}
+
+.accent {
+  font-family: var(--font-baskerville), serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 summary {
@@ -58,10 +83,12 @@ summary {
 }
 
 .kicker {
-  font-family: var(--font-sora), sans-serif;
+  font-family: var(--font-park), sans-serif;
   font-size: 0.72rem;
-  letter-spacing: 0.18em;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
+  color: var(--color-pulso);
 }
 
 .breath {
@@ -101,11 +128,11 @@ summary {
 }
 
 .bronchi-field {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240' fill='none'><path d='M120 20 C120 70 120 80 90 110 C60 140 40 150 30 200' stroke='%237BDEFA' stroke-opacity='0.45' stroke-width='1.2'/><path d='M120 20 C120 70 120 80 150 110 C180 140 200 150 214 198' stroke='%232399F3' stroke-opacity='0.35' stroke-width='1.2'/><path d='M90 110 C70 130 55 128 40 150' stroke='%237BDEFA' stroke-opacity='0.3' stroke-width='0.8'/><path d='M150 110 C176 128 188 132 206 154' stroke='%237BDEFA' stroke-opacity='0.3' stroke-width='0.8'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240' fill='none'><path d='M120 20 C120 70 120 80 90 110 C60 140 40 150 30 200' stroke='%236B98AD' stroke-opacity='0.55' stroke-width='1.2'/><path d='M120 20 C120 70 120 80 150 110 C180 140 200 150 214 198' stroke='%2300455A' stroke-opacity='0.28' stroke-width='1.2'/><path d='M90 110 C70 130 55 128 40 150' stroke='%236B98AD' stroke-opacity='0.35' stroke-width='0.8'/><path d='M150 110 C176 128 188 132 206 154' stroke='%236B98AD' stroke-opacity='0.35' stroke-width='0.8'/></svg>");
   background-size: 280px 280px;
 }
 
 .rule {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(123, 222, 250, 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgba(107, 152, 173, 0.8), transparent);
 }

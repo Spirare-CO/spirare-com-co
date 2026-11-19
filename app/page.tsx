@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Lung } from "@/components/lung";
+import { AirCycle } from "@/components/logo";
 import { TrackedLink } from "@/components/tracked-link";
 import { WhatsAppCTA } from "@/components/whatsapp-cta";
 import { educationCategories, publishedResources } from "@/lib/education";
@@ -7,7 +7,7 @@ import { services } from "@/lib/services";
 import { meta } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata = meta("/", "SPIRARE — Respirar mejor empieza aquí", site.support, true);
+export const metadata = meta("/", "spirare — Respirar mejor empieza aquí", site.support, true);
 
 const patientHighlights = [
   ["01", "Consulta médica especializada", "Medicina interna y neumología."],
@@ -28,52 +28,50 @@ export default function HomePage() {
 
   return (
     <main>
-      <section className="relative overflow-hidden bg-abyss text-white lg:min-h-[100svh]">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_40%,rgba(35,153,243,0.28),transparent_46%)]" />
-        <Lung
-          labelled
-          className="pointer-events-none absolute -right-[30%] bottom-[-8%] w-[88%] opacity-25 sm:w-[70%] lg:bottom-auto lg:-right-[2%] lg:top-[7%] lg:w-[52%] lg:opacity-100"
+      <section className="relative overflow-hidden bg-marea text-white">
+        <AirCycle
+          tone="mist"
+          className="pointer-events-none absolute -right-[18%] top-[-8%] w-[78%] max-w-[820px] opacity-90 sm:w-[58%] lg:-right-[4%] lg:top-[8%] lg:w-[46%]"
         />
-        <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col px-4 pb-6 pt-24 md:px-8 lg:min-h-[100svh] lg:justify-between lg:pt-32">
-          <div className="max-w-xl lg:max-w-[34rem]">
-          <p className="kicker text-cyan">SPIRARE · {site.concept}</p>
-          <h1 className="display mt-4 text-[2.35rem] leading-[0.9] min-[380px]:text-5xl sm:text-6xl lg:text-[6.4rem]">
-            Respirar
-            <br />
-            mejor
-            <br />
-            <span className="text-cyan">empieza aquí.</span>
-          </h1>
-          <p className="mt-5 max-w-md text-base leading-relaxed text-white/80">{site.support}</p>
+        <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col px-4 pb-8 pt-28 md:px-8 lg:min-h-[100svh] lg:justify-between lg:pb-12 lg:pt-36">
+          <div className="max-w-xl lg:max-w-[40rem]">
+            <p className="kicker">El ciclo del aire</p>
+            <h1 className="display mt-4 text-[2.6rem] leading-[0.95] min-[380px]:text-5xl sm:text-6xl lg:text-[5.6rem]">
+              Respirar mejor empieza aquí.
+            </h1>
+            <p className="accent mt-5 max-w-lg text-2xl text-blue-40 md:text-3xl">
+              Del latín spirare — respirar. La raíz de inspirar, espíritu y aspirar.
+            </p>
+            <p className="mt-5 max-w-md text-base leading-relaxed text-white/80">{site.support}</p>
           </div>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:mt-10">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:mt-12">
             <TrackedLink
               href="/pacientes"
               event="recorrido_pacientes"
-              className="group bg-abyss px-4 py-4 transition hover:bg-deep md:px-6 md:py-8"
+              className="group rounded-[28px] bg-bruma px-5 py-6 text-marea transition hover:bg-white md:px-7 md:py-8"
             >
-              <span className="display block text-[1.7rem] leading-none md:text-5xl">Soy paciente</span>
-              <span className="mt-2 block max-w-sm text-sm text-white/75">Consultas, pruebas y cuidado respiratorio.</span>
-              <span className="mt-4 inline-block text-sm text-cyan group-hover:translate-x-1 md:mt-6">Entrar al cuidado →</span>
+              <span className="display block text-[1.7rem] leading-none md:text-4xl">Soy paciente</span>
+              <span className="mt-3 block max-w-sm text-sm text-marea/75">Consultas, pruebas y cuidado respiratorio.</span>
+              <span className="mt-5 inline-block text-sm font-medium text-pulso group-hover:translate-x-1 md:mt-8">Entrar al cuidado →</span>
             </TrackedLink>
             <TrackedLink
               href="/instituciones"
               event="recorrido_instituciones"
-              className="group bg-electric px-4 py-4 transition hover:bg-bright md:px-6 md:py-8"
+              className="group rounded-[28px] bg-blue px-5 py-6 text-white transition hover:bg-blue-80 md:px-7 md:py-8"
             >
-              <span className="display block text-[1.7rem] leading-none md:text-5xl">Soy institución o empresa</span>
-              <span className="mt-2 block max-w-sm text-sm text-white/90">Asesoría especializada y tecnología respiratoria.</span>
-              <span className="mt-4 inline-block text-sm group-hover:translate-x-1 md:mt-6">Ver soluciones →</span>
+              <span className="display block text-[1.7rem] leading-none md:text-4xl">Soy institución o empresa</span>
+              <span className="mt-3 block max-w-sm text-sm text-white/90">Asesoría especializada y tecnología respiratoria.</span>
+              <span className="mt-5 inline-block text-sm font-medium group-hover:translate-x-1 md:mt-8">Ver soluciones →</span>
             </TrackedLink>
           </div>
         </div>
       </section>
 
-      <section className="bg-mist">
+      <section className="bg-bruma">
         <div className="mx-auto grid max-w-[1400px] gap-12 px-4 py-20 md:px-8 lg:grid-cols-12 lg:py-28">
           <div className="lg:col-span-4">
-            <p className="kicker text-electric">La marca</p>
-            <p className="display mt-4 text-6xl text-deep/20">01</p>
+            <p className="kicker">La marca</p>
+            <p className="display mt-4 text-6xl text-blue/50">01</p>
           </div>
           <div className="lg:col-span-8">
             <h2 className="display text-4xl leading-[1.02] md:text-6xl">
@@ -101,12 +99,12 @@ export default function HomePage() {
       <section className="bg-white">
         <div className="mx-auto grid max-w-[1400px] lg:grid-cols-12">
           <div className="px-4 py-16 md:px-8 lg:col-span-7 lg:py-24">
-            <p className="kicker text-electric">Pacientes</p>
+            <p className="kicker">Pacientes</p>
             <h2 className="display mt-3 text-4xl md:text-6xl">Atención para quien respira.</h2>
             <ol className="mt-10">
               {patientHighlights.map(([index, title, copy]) => (
                 <li key={index} className="grid grid-cols-[3rem_1fr] gap-4 border-t border-ink/10 py-5">
-                  <span className="text-sm text-electric">{index}</span>
+                  <span className="text-sm font-medium text-pulso">{index}</span>
                   <div>
                     <h3 className="display text-2xl">{title}</h3>
                     <p className="mt-1 text-sm text-ink/65">{copy}</p>
@@ -114,14 +112,14 @@ export default function HomePage() {
                 </li>
               ))}
             </ol>
-            <Link href="/pacientes/servicios" className="mt-8 inline-flex min-h-12 items-center bg-ink px-5 text-sm font-semibold text-white">
+            <Link href="/pacientes/servicios" className="mt-8 inline-flex min-h-12 items-center rounded-full bg-marea px-5 text-sm font-semibold text-white">
               Explorar servicios
             </Link>
           </div>
-          <div className="relative bg-deep px-4 py-16 text-white md:px-8 lg:col-span-5 lg:py-24">
-            <div className="bronchi-field absolute inset-0 opacity-40" />
+          <div className="relative bg-marea-120 px-4 py-16 text-white md:px-8 lg:col-span-5 lg:py-24">
+            <AirCycle tone="mist" className="pointer-events-none absolute -bottom-16 -right-10 w-64 opacity-80" />
             <div className="relative">
-              <p className="kicker text-cyan">Instituciones</p>
+              <p className="kicker">Instituciones</p>
               <h2 className="display mt-3 text-4xl md:text-5xl">Soluciones para quien organiza la atención.</h2>
               <ul className="mt-10 space-y-6">
                 {institutionHighlights.map(([title, copy]) => (
@@ -131,7 +129,7 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/instituciones" className="mt-10 inline-flex min-h-12 items-center border border-cyan px-5 text-sm font-semibold text-cyan">
+              <Link href="/instituciones" className="mt-10 inline-flex min-h-12 items-center rounded-full border border-white/70 px-5 text-sm font-semibold text-white">
                 Conocer soluciones
               </Link>
             </div>
@@ -139,11 +137,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-ice">
+      <section className="bg-blue-20">
         <div className="mx-auto max-w-[1400px] px-4 py-20 md:px-8">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <p className="kicker text-electric">Biblioteca</p>
+              <p className="kicker">Biblioteca</p>
               <h2 className="display mt-3 max-w-3xl text-4xl md:text-6xl">
                 Comprender tu salud también es parte del cuidado.
               </h2>
@@ -152,7 +150,7 @@ export default function HomePage() {
               Explorar recursos educativos
             </Link>
           </div>
-          <div className="mt-12 grid gap-px bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {(published.length > 0 ? published.slice(0, 4).map((item) => ({
               href: `/pacientes/educacion/${item.slug}`,
               title: item.title,
@@ -162,7 +160,7 @@ export default function HomePage() {
               title: item.name,
               note: "Categoría lista. Video pendiente de revisión.",
             }))).map((item) => (
-              <Link key={item.title} href={item.href} className="bg-ice p-6 transition hover:bg-white">
+              <Link key={item.title} href={item.href} className="rounded-[24px] bg-bruma p-6 transition hover:bg-white">
                 <h3 className="display text-2xl leading-tight">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink/65">{item.note}</p>
               </Link>
@@ -171,10 +169,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-abyss text-white">
-        <Lung className="pointer-events-none absolute -left-24 bottom-[-20%] w-[420px] opacity-50" />
+      <section className="relative overflow-hidden bg-marea text-white">
+        <AirCycle tone="mist" className="pointer-events-none absolute -left-24 bottom-[-30%] w-[420px] opacity-70" />
         <div className="relative mx-auto max-w-[1400px] px-4 py-24 md:px-8 md:py-32">
-          <p className="kicker text-cyan">Contacto</p>
+          <p className="kicker">Contacto</p>
           <h2 className="display mt-4 max-w-4xl text-5xl leading-[0.92] md:text-7xl">
             Estamos para acompañarte a respirar mejor.
           </h2>

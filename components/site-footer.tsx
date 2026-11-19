@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BronchialMark } from "@/components/lung";
+import { Logo } from "@/components/logo";
 import { emergencyNotice, site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -10,21 +10,21 @@ export function SiteFooter() {
   ].filter((entry) => entry[1]);
 
   return (
-    <footer className="bg-ink text-white">
+    <footer className="bg-marea text-white">
       <div className="mx-auto grid max-w-[1400px] gap-12 px-4 py-16 md:px-8 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <div className="flex items-center gap-2">
-            <BronchialMark className="h-8 w-8 text-cyan" />
-            <p className="display text-2xl">SPIRARE</p>
-          </div>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">
-            Ciencia, respiración y tecnología. {site.concept}.
+          <Logo variant="light" className="h-9 w-auto" />
+          <p className="accent mt-5 max-w-sm text-lg text-blue-40">
+            Del latín spirare — respirar.
+          </p>
+          <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/80">
+            Ciencia y calidez humana. {site.concept}.
           </p>
           <p className="mt-6 max-w-md text-sm leading-relaxed text-white/75">{emergencyNotice}</p>
         </div>
         <div className="grid gap-8 sm:grid-cols-3 lg:col-span-7">
           <div>
-            <p className="kicker text-cyan">Pacientes</p>
+            <p className="kicker">Pacientes</p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
               <li><Link href="/pacientes" className="hover:text-white">Atención</Link></li>
               <li><Link href="/pacientes/servicios" className="hover:text-white">Servicios</Link></li>
@@ -32,7 +32,7 @@ export function SiteFooter() {
             </ul>
           </div>
           <div>
-            <p className="kicker text-cyan">Instituciones</p>
+            <p className="kicker">Instituciones</p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
               <li><Link href="/instituciones" className="hover:text-white">Soluciones</Link></li>
               <li><Link href="/instituciones/asesoria" className="hover:text-white">Asesoría</Link></li>
@@ -40,7 +40,7 @@ export function SiteFooter() {
             </ul>
           </div>
           <div>
-            <p className="kicker text-cyan">SPIRARE</p>
+            <p className="kicker">spirare</p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
               <li><Link href="/nosotros" className="hover:text-white">Nosotros</Link></li>
               <li><Link href="/contacto" className="hover:text-white">Contacto</Link></li>
@@ -62,7 +62,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-[1400px] flex-col gap-2 px-4 py-5 text-sm text-white/75 md:flex-row md:justify-between md:px-8">
-          <p>© {new Date().getFullYear()} SPIRARE. Contenido clínico sujeto a revisión profesional.</p>
+          <p>© {new Date().getFullYear()} spirare. Contenido clínico sujeto a revisión profesional.</p>
           <p>Los datos de sede, horarios y habilitación se publican cuando estén confirmados.</p>
         </div>
       </div>

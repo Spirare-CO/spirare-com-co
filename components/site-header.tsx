@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { BronchialMark } from "@/components/lung";
+import { Logo } from "@/components/logo";
 import { WhatsAppCTA } from "@/components/whatsapp-cta";
 
 const links = [
@@ -55,14 +55,13 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 text-white transition ${
-        scrolled || open ? "bg-abyss/95 backdrop-blur-md" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-40 text-marea transition ${
+        scrolled || open ? "bg-bruma/95 shadow-[0_1px_0_rgba(0,69,90,0.08)] backdrop-blur-md" : "bg-bruma"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between gap-4 px-4 md:h-[4.5rem] md:px-8">
-        <Link href="/" className="flex items-center gap-2 text-white" aria-label="SPIRARE, inicio">
-          <BronchialMark className="h-8 w-8 text-cyan" />
-          <span className="display text-lg tracking-tight">SPIRARE</span>
+        <Link href="/" className="flex items-center py-2" aria-label="spirare, inicio">
+          <Logo className="h-8 w-auto md:h-9" />
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Principal">
@@ -82,7 +81,7 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm ${active ? "text-cyan" : "text-white/80 hover:text-white"}`}
+                className={`text-sm ${active ? "text-pulso" : "text-marea/80 hover:text-marea"}`}
                 aria-current={active ? "page" : undefined}
               >
                 {link.label}
@@ -99,26 +98,26 @@ export function SiteHeader() {
           <button
             ref={menuButton}
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center border border-white/30 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-marea/20 lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((value) => !value)}
           >
             <span className="sr-only">{open ? "Cerrar menú" : "Abrir menú"}</span>
             <span className="flex w-5 flex-col gap-1.5" aria-hidden>
-              <span className={`h-px bg-white transition ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
-              <span className={`h-px bg-white transition ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
+              <span className={`h-px bg-marea transition ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
+              <span className={`h-px bg-marea transition ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
             </span>
           </button>
         </div>
       </div>
 
       {open ? (
-        <nav ref={mobileNav} id="mobile-nav" className="max-h-[calc(100svh-4rem)] overflow-auto border-t border-white/10 px-4 py-6 lg:hidden" aria-label="Móvil">
+        <nav ref={mobileNav} id="mobile-nav" className="max-h-[calc(100svh-4rem)] overflow-auto border-t border-marea/10 bg-bruma px-4 py-6 lg:hidden" aria-label="Móvil">
           <ul className="space-y-1">
             {links.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="block py-3 text-2xl display text-white">
+                <Link href={link.href} className="block py-3 text-2xl display text-marea">
                   {link.label}
                 </Link>
               </li>
