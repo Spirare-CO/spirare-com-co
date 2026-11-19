@@ -14,12 +14,12 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-end",
-          background: "#08122F",
+          background: "#00455A",
           color: "#FFFFFF",
           padding: "72px",
         }}
       >
-        <div style={{ fontSize: 28, letterSpacing: 8, color: "#7BDEFA" }}>SPIRARE</div>
+        <div style={{ fontSize: 28, letterSpacing: 6, color: "#FF6D2D" }}>spirare</div>
         <div style={{ marginTop: 20, fontSize: 72, lineHeight: 1, maxWidth: 800 }}>
           Respirar mejor empieza aquí.
         </div>
