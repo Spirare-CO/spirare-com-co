@@ -22,5 +22,5 @@ export function Logo({ variant = "marea", className = "h-8 w-auto" }: LogoProps)
 
 export function AirCycle({ className = "", tone = "marea" }: { className?: string; tone?: "marea" | "mist" }) {
   const src = tone === "mist" ? "/brand/symbol-mist.png" : "/brand/symbol.png";
-  return <Image src={src} alt="" width={800} height={786} className={className} style={{ width: "auto", height: "auto" }} />;
+  return <Image src={src} alt="" width={800} height={786} className={`h-auto max-w-full ${className}`} />;
 }

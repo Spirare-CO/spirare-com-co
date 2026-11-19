@@ -31,17 +31,17 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-marea text-white">
         <AirCycle
           tone="mist"
-          className="pointer-events-none absolute -right-[18%] top-[-8%] w-[78%] max-w-[820px] opacity-90 sm:w-[58%] lg:-right-[4%] lg:top-[8%] lg:w-[46%]"
+          className="pointer-events-none absolute right-[-18%] top-1/2 w-[min(70%,380px)] -translate-y-1/2 opacity-90 sm:right-[-6%] sm:w-[min(46%,440px)] lg:right-[2%] lg:w-[min(36%,460px)]"
         />
-        <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col px-4 pb-8 pt-28 md:px-8 lg:min-h-[100svh] lg:justify-between lg:pb-12 lg:pt-36">
-          <div className="max-w-xl lg:max-w-[40rem]">
+        <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col gap-8 px-4 pb-10 pt-24 md:px-8 lg:gap-10 lg:pb-14 lg:pt-28">
+          <div className="max-w-xl lg:max-w-[34rem]">
             <p className="kicker">El ciclo del aire</p>
             <h1 className="display mt-4 text-[2.6rem] leading-[0.95] min-[380px]:text-5xl sm:text-6xl lg:text-[5.6rem]">
               Respirar mejor empieza aquí.
             </h1>
             <p className="mt-5 max-w-md text-base leading-relaxed text-white/80">{site.support}</p>
           </div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:mt-12">
+          <div className="grid gap-4 sm:grid-cols-2 lg:max-w-[46rem]">
             <TrackedLink
               href="/pacientes"
               event="recorrido_pacientes"
