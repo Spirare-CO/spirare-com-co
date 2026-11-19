@@ -60,8 +60,8 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between gap-4 px-4 md:h-[4.5rem] md:px-8">
-        <Link href="/" className="flex items-center py-2" aria-label="spirare, inicio">
-          <Logo className="h-8 w-auto md:h-9" />
+        <Link href="/" className="flex h-8 shrink-0 items-center md:h-9" aria-label="spirare, inicio">
+          <Logo className="h-8 max-h-8 w-auto md:h-9 md:max-h-9" />
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Principal">

@@ -39,9 +39,6 @@ export default function HomePage() {
             <h1 className="display mt-4 text-[2.6rem] leading-[0.95] min-[380px]:text-5xl sm:text-6xl lg:text-[5.6rem]">
               Respirar mejor empieza aquí.
             </h1>
-            <p className="accent mt-5 max-w-lg text-2xl text-blue-40 md:text-3xl">
-              Del latín spirare — respirar. La raíz de inspirar, espíritu y aspirar.
-            </p>
             <p className="mt-5 max-w-md text-base leading-relaxed text-white/80">{site.support}</p>
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:mt-12">
@@ -70,7 +67,7 @@ export default function HomePage() {
       <section className="bg-bruma">
         <div className="mx-auto grid max-w-[1400px] gap-12 px-4 py-20 md:px-8 lg:grid-cols-12 lg:py-28">
           <div className="lg:col-span-4">
-            <p className="kicker">La marca</p>
+            <p className="kicker">Nosotros</p>
             <p className="display mt-4 text-6xl text-blue/50">01</p>
           </div>
           <div className="lg:col-span-8">
