@@ -67,7 +67,7 @@ export default function HomePage() {
       <section className="bg-bruma">
         <div className="mx-auto grid max-w-[1400px] gap-12 px-4 py-20 md:px-8 lg:grid-cols-12 lg:py-28">
           <div className="lg:col-span-4">
-            <p className="kicker">La marca</p>
+            <p className="kicker">Nosotros</p>
             <p className="display mt-4 text-6xl text-blue/50">01</p>
           </div>
           <div className="lg:col-span-8">

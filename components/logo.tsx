@@ -8,7 +8,15 @@ type LogoProps = {
 export function Logo({ variant = "marea", className = "h-8 w-auto" }: LogoProps) {
   const src = variant === "light" ? "/brand/logo-horizontal-light.png" : "/brand/logo-horizontal.png";
   return (
-    <Image src={src} alt="" width={1200} height={316} className={className} style={{ width: "auto", height: "auto" }} priority={variant === "marea"} />
+    <Image
+      src={src}
+      alt=""
+      width={1200}
+      height={316}
+      className={`block h-full w-auto max-h-full object-contain ${className}`}
+      style={{ width: "auto", height: "100%" }}
+      priority={variant === "marea"}
+    />
   );
 }
 

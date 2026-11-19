@@ -13,7 +13,9 @@ export function SiteFooter() {
     <footer className="bg-marea text-white">
       <div className="mx-auto grid max-w-[1400px] gap-12 px-4 py-16 md:px-8 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <Logo variant="light" className="h-9 w-auto" />
+          <span className="flex h-9 items-center">
+            <Logo variant="light" className="h-9 max-h-9 w-auto" />
+          </span>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/80">
             Ciencia y calidez humana. {site.concept}.
           </p>
