@@ -14,10 +14,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-[1400px] gap-12 px-4 py-16 md:px-8 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <Logo variant="light" className="h-9 w-auto" />
-          <p className="accent mt-5 max-w-sm text-lg text-blue-40">
-            Del latín spirare — respirar.
-          </p>
-          <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/80">
+          <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/80">
             Ciencia y calidez humana. {site.concept}.
           </p>
           <p className="mt-6 max-w-md text-sm leading-relaxed text-white/75">{emergencyNotice}</p>
